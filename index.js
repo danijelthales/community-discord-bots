@@ -63,7 +63,7 @@ setInterval(function () {
     clientNecDao.guilds.cache.forEach(function (value, key) {
         try {
             value.members.cache.get("779720047769813013").setNickname("NEC DAO MEMBERS=" + daoHolders);
-            value.members.cache.get("779720047769813013").user.setActivity("DAO locked=$" + getNumberLabel(DAObalance), {type: 'PLAYING'});
+            value.members.cache.get("779720047769813013").user.setActivity("DAO locked=$" + getNumberLabel(DAObalance) + " NEC=" + DAONecBalance, {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -121,6 +121,7 @@ setInterval(getDaoHolders, 60 * 1000)
 
 
 let DAObalance = 11000000;
+let DAONecBalance = 11000000;
 setInterval(function () {
     try {
         https.get('https://api.bloxy.info/address/balance?address=0xDa490e9acc7f7418293CFeA1FF2085c60d573626&chain=eth&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
@@ -135,7 +136,8 @@ setInterval(function () {
             resp.on('end', () => {
                 try {
                     let result = JSON.parse(data);
-                    DAObalance = result[0].balance;
+                    DAONecBalance = result[0].balance;
+                    DAObalance = DAONecBalance * necPrice;
                 } catch (e) {
                     console.log(e);
                 }
@@ -169,5 +171,33 @@ function getNumberLabel(labelValue) {
 
 }
 
+let necPrice = 0.17;
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/nectar-token', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                necPrice = result.market_data.current_price.usd;
+                necPrice = Math.round(((necPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                necMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000);
 
 // move the gas bot here
