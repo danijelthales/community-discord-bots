@@ -143,7 +143,8 @@ function delay(time) {
     });
 }
 
-setInterval(getDaoHolders, 60 * 1000 * 2)
+setInterval(getDaoHolders, 60 * 1000 * 60)
+setInterval(setTimeout, 60 * 1000 * 2)
 
 
 let DAObalance = 11000000;
