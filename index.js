@@ -72,7 +72,7 @@ setInterval(function () {
     clientNecDao.guilds.cache.forEach(function (value, key) {
         try {
             value.members.cache.get("779720047769813013").setNickname("NEC DAO MEMBERS=" + daoHolders);
-            value.members.cache.get("779720047769813013").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + DAONecBalance, {type: 'PLAYING'});
+            value.members.cache.get("779720047769813013").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -176,7 +176,7 @@ setInterval(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1000 * 2);
+}, 60 * 1000 * 1);
 
 
 function getNumberLabel(labelValue) {
@@ -281,6 +281,7 @@ setInterval(function () {
                     });
 
                     deversifyTVL = ethBalance;
+                    deversifyTVL = Math.round(((deversifyTVL * 1.0) + Number.EPSILON) * 10) / 10;
                 } catch (e) {
                     console.log(e);
                 }
