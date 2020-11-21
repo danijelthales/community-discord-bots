@@ -69,7 +69,7 @@ setInterval(function () {
     clientNecDao.guilds.cache.forEach(function (value, key) {
         try {
             value.members.cache.get("779720047769813013").setNickname("NEC DAO MEMBERS=" + daoHolders);
-            value.members.cache.get("779720047769813013").user.setActivity("DAO locked=$" + getNumberLabel(DAObalance) + " NEC=" + DAONecBalance, {type: 'PLAYING'});
+            value.members.cache.get("779720047769813013").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + DAONecBalance, {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -136,7 +136,7 @@ setInterval(getDaoHolders, 60 * 1000)
 
 
 let DAObalance = 11000000;
-let DAONecBalance = 11000000;
+let DAONecBalance = 66000000;
 setInterval(function () {
     try {
         https.get('https://api.bloxy.info/address/balance?address=0xDa490e9acc7f7418293CFeA1FF2085c60d573626&chain=eth&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
