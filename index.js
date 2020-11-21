@@ -16,6 +16,12 @@ clientTokenHolders.login(process.env.BOT_TOKEN_HOLDERS_COUNT);
 const clientNecDao = new Discord.Client();
 clientNecDao.login(process.env.BOT_TOKEN_NEC_DAO);
 
+const clientBoosted = new Discord.Client();
+clientBoosted.login(process.env.BOT_TOKEN_BOOSTED);
+
+let boostedPrice = 17;
+let boostedMarketcap = 700000;
+
 const puppeteer = require('puppeteer');
 
 let holdersCount = 853;
@@ -69,7 +75,16 @@ setInterval(function () {
         }
     });
 
-}, 45 * 1000);
+    clientBoosted.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("779759588538187808").setNickname("$" + boostedPrice);
+            value.members.cache.get("779759588538187808").user.setActivity("marketcap=$" + getNumberLabel(boostedMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+}, 60 * 1000);
 
 
 var daoHolders = 130;
@@ -187,7 +202,35 @@ setInterval(function () {
                 let result = JSON.parse(data);
                 necPrice = result.market_data.current_price.usd;
                 necPrice = Math.round(((necPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
-                necMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000);
+
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/boosted-finance', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                boostedPrice = result.market_data.current_price.usd;
+                boostedPrice = Math.round(((boostedPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                boostedMarketcap = result.market_data.market_cap.usd;
             } catch (e) {
                 console.log(e);
             }
