@@ -89,7 +89,7 @@ setInterval(function () {
 
     clientDeversify.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("779762860146032692").setNickname("TVL=" + getNumberLabel(deversifyTVL));
+            value.members.cache.get("779762860146032692").setNickname("TVL=$" + numberWithCommas(deversifyTVL));
         } catch (e) {
             console.log(e);
         }
@@ -293,5 +293,9 @@ setInterval(function () {
     }
 }, 60 * 1000);
 
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 // move the gas bot here
