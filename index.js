@@ -19,6 +19,9 @@ clientNecDao.login(process.env.BOT_TOKEN_NEC_DAO);
 const clientBoosted = new Discord.Client();
 clientBoosted.login(process.env.BOT_TOKEN_BOOSTED);
 
+const clientDeversify = new Discord.Client();
+clientDeversify.login(process.env.BOT_TOKEN_DEVERSIFY);
+
 let boostedPrice = 17;
 let boostedMarketcap = 700000;
 
@@ -79,6 +82,14 @@ setInterval(function () {
         try {
             value.members.cache.get("779759588538187808").setNickname("$" + boostedPrice);
             value.members.cache.get("779759588538187808").user.setActivity("marketcap=$" + getNumberLabel(boostedMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientDeversify.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("779762860146032692").setNickname("TVL=" + getNumberLabel(deversifyTVL));
         } catch (e) {
             console.log(e);
         }
@@ -242,5 +253,45 @@ setInterval(function () {
     });
 
 }, 50 * 1000);
+
+
+let deversifyTVL = 3000000;
+setInterval(function () {
+    try {
+        https.get('https://api.ethplorer.io/getAddressInfo/0x5d22045DAcEAB03B158031eCB7D9d06Fad24609b?apiKey=freekey', (resp) => {
+            let data = '';
+
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                try {
+                    let result = JSON.parse(data);
+
+                    let ethBalance = result.ETH.balance * result.ETH.price.rate;
+
+                    result.tokens.forEach(t => {
+                        if (t.tokenInfo.price) {
+                            ethBalance += t.tokenInfo.price.rate * t.balance / 1e18;
+                        }
+                    });
+
+                    deversifyTVL = ethBalance;
+                } catch (e) {
+                    console.log(e);
+                }
+            });
+
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}, 60 * 1000);
+
 
 // move the gas bot here
