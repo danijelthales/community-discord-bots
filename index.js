@@ -54,7 +54,7 @@ setInterval(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1000 * 4);
+}, 60 * 1000 * 2);
 
 
 setInterval(function () {
@@ -95,7 +95,7 @@ setInterval(function () {
         }
     });
 
-}, 60 * 1000);
+}, 60 * 1000 * 2);
 
 
 var daoHolders = 130;
@@ -143,7 +143,7 @@ function delay(time) {
     });
 }
 
-setInterval(getDaoHolders, 60 * 1000 * 5)
+setInterval(getDaoHolders, 60 * 1000 * 2)
 
 
 let DAObalance = 11000000;
@@ -175,7 +175,7 @@ setInterval(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1000 * 8);
+}, 60 * 1000 * 2);
 
 
 function getNumberLabel(labelValue) {
@@ -223,7 +223,7 @@ setInterval(function () {
         console.log("Error: " + err.message);
     });
 
-}, 60 * 1000 * 10);
+}, 60 * 1000 * 2);
 
 
 setInterval(function () {
@@ -252,7 +252,7 @@ setInterval(function () {
         console.log("Error: " + err.message);
     });
 
-}, 60 * 1000 * 10);
+}, 60 * 1000 * 2);
 
 
 let deversifyTVL = 3000000;
@@ -291,7 +291,7 @@ setInterval(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1000 * 10);
+}, 60 * 1000 * 2);
 
 
 function numberWithCommas(x) {
