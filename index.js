@@ -257,7 +257,7 @@ setInterval(function () {
 
 
 let deversifyTVL = 3000000;
-setInterval(function () {
+setTimeout(function () {
     try {
         https.get('https://api.ethplorer.io/getAddressInfo/0x5d22045DAcEAB03B158031eCB7D9d06Fad24609b?apiKey=freekey', (resp) => {
             let data = '';
@@ -274,13 +274,15 @@ setInterval(function () {
 
                     let ethBalance = result.ETH.balance * result.ETH.price.rate;
 
+                    let otherTokens = 0;
                     result.tokens.forEach(t => {
                         if (t.tokenInfo.price) {
-                            ethBalance += t.tokenInfo.price.rate * t.balance / 1e18;
+                            let curValue = t.tokenInfo.price.rate * t.balance / Math.pow(10, t.tokenInfo.decimals);
+                            otherTokens += curValue;
                         }
                     });
 
-                    deversifyTVL = ethBalance;
+                    deversifyTVL = ethBalance + otherTokens;
                     deversifyTVL = Math.round(((deversifyTVL * 1.0) + Number.EPSILON) * 10) / 10;
                 } catch (e) {
                     console.log(e);
@@ -293,7 +295,7 @@ setInterval(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1000 * 2);
+}, 60 * 1 * 2);
 
 
 function numberWithCommas(x) {
