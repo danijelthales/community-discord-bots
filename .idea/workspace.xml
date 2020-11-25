@@ -18,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="277" column="48" lean-forward="true" selection-start-line="277" selection-start-column="48" selection-end-line="277" selection-end-column="48" />
+            <state relative-caret-position="184">
+              <caret line="288" column="17" lean-forward="true" selection-start-line="288" selection-start-column="17" selection-end-line="288" selection-end-column="17" />
               <folding>
-                <marker date="1606266247348" expanded="true" signature="3945:4238" ph="..." />
+                <marker date="1606266611770" expanded="true" signature="3945:4238" ph="..." />
               </folding>
             </state>
           </provider>
@@ -148,12 +148,12 @@
       <option name="presentableId" value="Default" />
       <updated>1605920062738</updated>
       <workItem from="1605920065363" duration="13337000" />
-      <workItem from="1606252463713" duration="3435000" />
+      <workItem from="1606252463713" duration="3799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16772000" />
+    <option name="totallyTimeSpent" value="17136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -193,18 +193,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.js</url>
-          <line>285</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
@@ -243,10 +231,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="277" column="48" lean-forward="true" selection-start-line="277" selection-start-column="48" selection-end-line="277" selection-end-column="48" />
+        <state relative-caret-position="184">
+          <caret line="288" column="17" lean-forward="true" selection-start-line="288" selection-start-column="17" selection-end-line="288" selection-end-column="17" />
           <folding>
-            <marker date="1606266247348" expanded="true" signature="3945:4238" ph="..." />
+            <marker date="1606266611770" expanded="true" signature="3945:4238" ph="..." />
           </folding>
         </state>
       </provider>

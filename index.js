@@ -257,7 +257,7 @@ setInterval(function () {
 
 
 let deversifyTVL = 3000000;
-setTimeout(function () {
+setInterval(function () {
     try {
         https.get('https://api.ethplorer.io/getAddressInfo/0x5d22045DAcEAB03B158031eCB7D9d06Fad24609b?apiKey=freekey', (resp) => {
             let data = '';
@@ -295,7 +295,7 @@ setTimeout(function () {
     } catch (e) {
         console.log(e);
     }
-}, 60 * 1 * 2);
+}, 60 * 1000 * 2);
 
 
 function numberWithCommas(x) {
