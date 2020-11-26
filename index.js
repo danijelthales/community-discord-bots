@@ -22,8 +22,15 @@ clientBoosted.login(process.env.BOT_TOKEN_BOOSTED);
 const clientDeversify = new Discord.Client();
 clientDeversify.login(process.env.BOT_TOKEN_DEVERSIFY);
 
+
+const clientSfi = new Discord.Client();
+clientSfi.login(process.env.BOT_TOKEN_SFI);
+
 let boostedPrice = 17;
 let boostedMarketcap = 700000;
+
+var sfiPrice = 361.02;
+var sfiMarketcap = 11638814;
 
 const puppeteer = require('puppeteer');
 
@@ -82,6 +89,15 @@ setInterval(function () {
         try {
             value.members.cache.get("779759588538187808").setNickname("$" + boostedPrice);
             value.members.cache.get("779759588538187808").user.setActivity("marketcap=$" + getNumberLabel(boostedMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientSfi.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("781612897352024125").setNickname("$" + sfiPrice);
+            value.members.cache.get("781612897352024125").user.setActivity("marketcap=$" + getNumberLabel(sfiMarketcap), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
