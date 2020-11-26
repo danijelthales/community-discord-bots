@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="252">
+              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
               <folding>
-                <marker date="1606424521996" expanded="true" signature="4450:4743" ph="..." />
+                <marker date="1606431602143" expanded="true" signature="4450:4743" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,12 +153,12 @@
       <option name="presentableId" value="Default" />
       <updated>1605920062738</updated>
       <workItem from="1605920065363" duration="13337000" />
-      <workItem from="1606252463713" duration="6344000" />
+      <workItem from="1606252463713" duration="8071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19681000" />
+    <option name="totallyTimeSpent" value="21408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -237,10 +236,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        <state relative-caret-position="252">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
           <folding>
-            <marker date="1606424521996" expanded="true" signature="4450:4743" ph="..." />
+            <marker date="1606431602143" expanded="true" signature="4450:4743" ph="..." />
           </folding>
         </state>
       </provider>
