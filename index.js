@@ -111,47 +111,47 @@ setInterval(function () {
         }
     });
 
-}, 60 * 1000 * 2);
+}, 60 * 1000 * 1);
 
 
 var daoHolders = 130;
 
-async function getDaoHolders() {
-    try {
-        console.log("Fetching Dao Holders");
-        const browser = await puppeteer.launch({
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-            ],
-        });
-        const page = await browser.newPage();
-        await page.setViewport({width: 1000, height: 926});
-        await page.goto("https://alchemy.daostack.io/dao/0xe56b4d8d42b1c9ea7dda8a6950e3699755943de7/members/", {waitUntil: 'networkidle2'});
-        await delay(15000);
-        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
-        await delay(5000);
-        await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
-        await delay(5000);
-        /** @type {string[]} */
-        var prices = await page.evaluate(() => {
-            var div = document.querySelectorAll('.A9766RuJrZ1KGQeSF-LoT');
-
-            var prices = []
-            div.forEach(element => {
-                prices.push(element.textContent);
-            });
-
-            return prices
-        })
-
-        daoHolders = prices.length;
-        browser.close()
-    } catch (e) {
-        console.log("Error happened on getting data from barnbridge.");
-        console.log(e);
-    }
-}
+// async function getDaoHolders() {
+//     try {
+//         console.log("Fetching Dao Holders");
+//         const browser = await puppeteer.launch({
+//             args: [
+//                 '--no-sandbox',
+//                 '--disable-setuid-sandbox',
+//             ],
+//         });
+//         const page = await browser.newPage();
+//         await page.setViewport({width: 1000, height: 926});
+//         await page.goto("https://alchemy.daostack.io/dao/0xe56b4d8d42b1c9ea7dda8a6950e3699755943de7/members/", {waitUntil: 'networkidle2'});
+//         await delay(15000);
+//         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
+//         await delay(5000);
+//         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
+//         await delay(5000);
+//         /** @type {string[]} */
+//         var prices = await page.evaluate(() => {
+//             var div = document.querySelectorAll('.A9766RuJrZ1KGQeSF-LoT');
+//
+//             var prices = []
+//             div.forEach(element => {
+//                 prices.push(element.textContent);
+//             });
+//
+//             return prices
+//         })
+//
+//         daoHolders = prices.length;
+//         browser.close()
+//     } catch (e) {
+//         console.log("Error happened on getting data from barnbridge.");
+//         console.log(e);
+//     }
+// }
 
 function delay(time) {
     return new Promise(function (resolve) {
