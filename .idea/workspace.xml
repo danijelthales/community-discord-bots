@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="" />
+    <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="388" column="61" selection-start-line="388" selection-start-column="61" selection-end-line="388" selection-end-column="61" />
+            <state relative-caret-position="256">
+              <caret line="360" column="63" selection-start-line="360" selection-start-column="63" selection-end-line="360" selection-end-column="63" />
               <folding>
-                <marker date="1606784769790" expanded="true" signature="6521:6814" ph="..." />
+                <marker date="1606785079726" expanded="true" signature="6521:6814" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,12 +156,12 @@
       <updated>1605920062738</updated>
       <workItem from="1605920065363" duration="13337000" />
       <workItem from="1606252463713" duration="9298000" />
-      <workItem from="1606780367627" duration="2388000" />
+      <workItem from="1606780367627" duration="2697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25023000" />
+    <option name="totallyTimeSpent" value="25332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -237,10 +239,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="388" column="61" selection-start-line="388" selection-start-column="61" selection-end-line="388" selection-end-column="61" />
+        <state relative-caret-position="256">
+          <caret line="360" column="63" selection-start-line="360" selection-start-column="63" selection-end-line="360" selection-end-column="63" />
           <folding>
-            <marker date="1606784769790" expanded="true" signature="6521:6814" ph="..." />
+            <marker date="1606785079726" expanded="true" signature="6521:6814" ph="..." />
           </folding>
         </state>
       </provider>
