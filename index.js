@@ -22,9 +22,32 @@ clientBoosted.login(process.env.BOT_TOKEN_BOOSTED);
 const clientDeversify = new Discord.Client();
 clientDeversify.login(process.env.BOT_TOKEN_DEVERSIFY);
 
-
 const clientSfi = new Discord.Client();
 clientSfi.login(process.env.BOT_TOKEN_SFI);
+
+const clientPickle = new Discord.Client();
+clientPickle.login(process.env.BOT_TOKEN_PICKLE);
+
+const clientCream = new Discord.Client();
+clientCream.login(process.env.BOT_TOKEN_CREAM);
+
+const clientCorn = new Discord.Client();
+clientCorn.login(process.env.BOT_TOKEN_CORN);
+
+const clientCover = new Discord.Client();
+clientCover.login(process.env.BOT_TOKEN_COVER);
+
+let creamPrice = 17;
+let creamMarketcap = 700000;
+
+let cornPrice = 17;
+let cornMarketcap = 700000;
+
+let picklePrice = 17;
+let pickleMarketcap = 700000;
+
+let coverPrice = 17;
+let coverMarketcap = 700000;
 
 let boostedPrice = 17;
 let boostedMarketcap = 700000;
@@ -98,6 +121,42 @@ setInterval(function () {
         try {
             value.members.cache.get("781612897352024125").setNickname("$" + sfiPrice);
             value.members.cache.get("781612897352024125").user.setActivity("marketcap=$" + getNumberLabel(sfiMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientCorn.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("783117849211174933").setNickname("$" + cornPrice);
+            value.members.cache.get("783117849211174933").user.setActivity("marketcap=$" + getNumberLabel(cornMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientCream.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("783117875878690846").setNickname("$" + creamPrice);
+            value.members.cache.get("783117875878690846").user.setActivity("marketcap=$" + getNumberLabel(creamMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientCover.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("783117934565392384").setNickname("$" + coverPrice);
+            value.members.cache.get("783117934565392384").user.setActivity("marketcap=$" + getNumberLabel(coverMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientPickle.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("783117898641309707").setNickname("$" + picklePrice);
+            value.members.cache.get("783117898641309707").user.setActivity("marketcap=$" + getNumberLabel(pickleMarketcap), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -268,7 +327,119 @@ setInterval(function () {
         console.log("Error: " + err.message);
     });
 
-}, 60 * 1000 * 1);
+}, 50 * 1000 * 1);
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/cover-protocol', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                coverPrice = result.market_data.current_price.usd;
+                coverPrice = Math.round(((coverPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                coverMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/corn', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                cornPrice = result.market_data.current_price.usd;
+                cornPrice = Math.round(((cornPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                cornMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/cream', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                creamPrice = result.market_data.current_price.usd;
+                creamPrice = Math.round(((creamPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                creamMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/pickle-finance', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                picklePrice = result.market_data.current_price.usd;
+                picklePrice = Math.round(((picklePrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                pickleMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
 
 setInterval(function () {
     https.get('https://api.coingecko.com/api/v3/coins/saffron-finance', (resp) => {
