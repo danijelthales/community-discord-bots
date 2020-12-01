@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +16,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="430" column="31" selection-start-line="430" selection-start-column="31" selection-end-line="430" selection-end-column="31" />
+            <state relative-caret-position="69">
+              <caret line="388" column="61" selection-start-line="388" selection-start-column="61" selection-end-line="388" selection-end-column="61" />
               <folding>
-                <marker date="1606780880785" expanded="true" signature="6521:6814" ph="..." />
+                <marker date="1606784769790" expanded="true" signature="6521:6814" ph="..." />
               </folding>
             </state>
           </provider>
@@ -41,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -68,6 +65,8 @@
       <find>puppe</find>
       <find>puppeteer</find>
       <find>getDaoHolders</find>
+      <find>cream</find>
+      <find>creamPrice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,7 +93,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
-    <option name="width" value="1931" />
+    <option name="width" value="1932" />
     <option name="height" value="1045" />
   </component>
   <component name="ProjectView">
@@ -155,12 +154,12 @@
       <updated>1605920062738</updated>
       <workItem from="1605920065363" duration="13337000" />
       <workItem from="1606252463713" duration="9298000" />
-      <workItem from="1606780367627" duration="513000" />
+      <workItem from="1606780367627" duration="2388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23148000" />
+    <option name="totallyTimeSpent" value="25023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -231,17 +230,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="430" column="31" selection-start-line="430" selection-start-column="31" selection-end-line="430" selection-end-column="31" />
+        <state relative-caret-position="69">
+          <caret line="388" column="61" selection-start-line="388" selection-start-column="61" selection-end-line="388" selection-end-column="61" />
           <folding>
-            <marker date="1606780880785" expanded="true" signature="6521:6814" ph="..." />
+            <marker date="1606784769790" expanded="true" signature="6521:6814" ph="..." />
           </folding>
         </state>
       </provider>

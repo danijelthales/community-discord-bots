@@ -386,7 +386,7 @@ setInterval(function () {
 }, 50 * 1000 * 1);
 
 setInterval(function () {
-    https.get('https://api.coingecko.com/api/v3/coins/cream', (resp) => {
+    https.get('https://api.coingecko.com/api/v3/coins/cream-2', (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
