@@ -37,6 +37,13 @@ clientCorn.login(process.env.BOT_TOKEN_CORN);
 const clientCover = new Discord.Client();
 clientCover.login(process.env.BOT_TOKEN_COVER);
 
+const clientBeehiveApy = new Discord.Client();
+clientBeehiveApy.login(process.env.BOT_TOKEN_BEEHIVE_APY);
+
+const clientBeehiveParticipants = new Discord.Client();
+clientBeehiveParticipants.login(process.env.BOT_TOKEN_BEEHIVE_PARTICIPANTS);
+
+
 let creamPrice = 17;
 let creamMarketcap = 700000;
 
@@ -54,6 +61,8 @@ let boostedMarketcap = 700000;
 
 var sfiPrice = 361.02;
 var sfiMarketcap = 11638814;
+
+let necApy = 570;
 
 const puppeteer = require('puppeteer');
 
@@ -86,6 +95,35 @@ setInterval(function () {
     }
 }, 60 * 1000 * 2);
 
+let beehiveParticipants = 57;
+setInterval(function () {
+    try {
+        https.get('https://api.bloxy.info/token/token_stat?token=0xb21e53d8bd2c81629dd916eeAd08d338e7fCC201&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
+            let data = '';
+
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                try {
+                    let result = JSON.parse(data);
+                    beehiveParticipants = result[0].holders_count;
+                } catch (e) {
+                    console.log(e);
+                }
+            });
+
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}, 60 * 1000 * 2);
+
 
 setInterval(function () {
 
@@ -101,8 +139,27 @@ setInterval(function () {
 
     clientNecDao.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("779720047769813013").setNickname("NEC DAO MEMBERS=" + daoHolders);
+            value.members.cache.get("779720047769813013").setNickname("necDAO=" + daoHolders);
             value.members.cache.get("779720047769813013").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+
+    clientBeehiveApy.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("784089122171519006").setNickname("APY=" + necApy + "%");
+            //value.members.cache.get("784089122171519006").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientBeehiveParticipants.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("784089307044380732").setNickname("beehive=" + beehiveParticipants);
+            //value.members.cache.get("784089307044380732").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -556,6 +613,29 @@ setInterval(function () {
                 fastGasPrice = Math.round(((fastGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
                 lowGasPrice = Math.round(((lowGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
                 instantGasPrice = Math.round(((instantGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
+            } catch (e) {
+                console.log(e);
+            }
+        });
+    });
+
+}, 30 * 1000);
+
+setInterval(function () {
+    https.get('http://api.deversifi.com/nectarPoolStats', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                necApy = necApy * 2.0;
+                necApy = Math.round(((necApy * 1.0) + Number.EPSILON) * 10) / 10;
             } catch (e) {
                 console.log(e);
             }
