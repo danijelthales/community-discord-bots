@@ -622,7 +622,7 @@ setInterval(function () {
 }, 30 * 1000);
 
 setInterval(function () {
-    https.get('http://api.deversifi.com/nectarPoolStats', (resp) => {
+    https.get('https://api.deversifi.com/nectarPoolStats', (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
