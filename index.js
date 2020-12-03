@@ -622,7 +622,7 @@ setInterval(function () {
 }, 30 * 1000);
 
 setInterval(function () {
-    https.get('https://api.deversifi.com/nectarPoolStats', (resp) => {
+    https.get('https://script.googleusercontent.com/macros/echo?user_content_key=jaeQHEKlsoJQGdm92ltXb87R8hhPnPwFUPfPkjlFYn27395X-MOPC7-qSIbDC9U6atZVvo2CYrRyzVIwmKspOHxS3au_LkrFm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnO3bkoNVKL8gSKPT0E9mg8BYUx4zgyG3Wkt2gjwmVSz9Ho1btcfuKUcYZpTak_o22Q&lib=M7y1lWJkyV1102t8J2PuK_3a4k8Etp_dT', (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
