@@ -44,6 +44,13 @@ const clientBeehiveParticipants = new Discord.Client();
 clientBeehiveParticipants.login(process.env.BOT_TOKEN_BEEHIVE_PARTICIPANTS);
 
 
+const clientBac= new Discord.Client();
+clientBac.login(process.env.BOT_TOKEN_BAC);
+
+const clientBas = new Discord.Client();
+clientBas.login(process.env.BOT_TOKEN_BAS);
+
+
 let creamPrice = 17;
 let creamMarketcap = 700000;
 
@@ -61,6 +68,12 @@ let boostedMarketcap = 700000;
 
 var sfiPrice = 361.02;
 var sfiMarketcap = 11638814;
+
+let bacPrice = 17;
+let bacMarketcap = 700000;
+
+let basPrice = 17;
+let basMarketcap = 700000;
 
 let necApy = 570;
 
@@ -178,6 +191,24 @@ setInterval(function () {
         try {
             value.members.cache.get("781612897352024125").setNickname("$" + sfiPrice);
             value.members.cache.get("781612897352024125").user.setActivity("marketcap=$" + getNumberLabel(sfiMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientBas.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("785131451481849857").setNickname("$" + basPrice);
+            value.members.cache.get("785131451481849857").user.setActivity("marketcap=$" + getNumberLabel(basMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+    clientBac.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("785131333126324244").setNickname("$" + bacPrice);
+            value.members.cache.get("785131333126324244").user.setActivity("marketcap=$" + getNumberLabel(bacMarketcap), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -514,6 +545,64 @@ setInterval(function () {
                 sfiPrice = result.market_data.current_price.usd;
                 sfiPrice = Math.round(((sfiPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
                 sfiMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 60 * 1000 * 1);
+
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/basis-cash', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                bacPrice = result.market_data.current_price.usd;
+                bacPrice = Math.round(((bacPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                bacMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 60 * 1000 * 1);
+
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/basis-share', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                basPrice = result.market_data.current_price.usd;
+                basPrice = Math.round(((basPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                basMarketcap = result.market_data.market_cap.usd;
             } catch (e) {
                 console.log(e);
             }
