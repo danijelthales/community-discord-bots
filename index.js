@@ -724,7 +724,7 @@ setInterval(function () {
             try {
                 let result = JSON.parse(data);
                 necApy = result.apy;
-                necApy = necApy * 2.0;
+                necApy = necApy * 1.0;
                 necApy = Math.round(((necApy * 1.0) + Number.EPSILON) * 10) / 10;
             } catch (e) {
                 console.log(e);
