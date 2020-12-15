@@ -50,6 +50,11 @@ clientBac.login(process.env.BOT_TOKEN_BAC);
 const clientBas = new Discord.Client();
 clientBas.login(process.env.BOT_TOKEN_BAS);
 
+const clientStrong = new Discord.Client();
+clientStrong.login(process.env.BOT_TOKEN_STRONG);
+
+let strongPrice = 17;
+let strongMarketcap = 700000;
 
 let creamPrice = 17;
 let creamMarketcap = 700000;
@@ -227,6 +232,16 @@ setInterval(function () {
         try {
             value.members.cache.get("783117875878690846").setNickname("$" + creamPrice);
             value.members.cache.get("783117875878690846").user.setActivity("marketcap=$" + getNumberLabel(creamMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
+
+    clientStrong.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("788392623446163456").setNickname("$" + strongPrice);
+            value.members.cache.get("788392623446163456").user.setActivity("marketcap=$" + getNumberLabel(strongMarketcap), {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
         }
@@ -489,6 +504,35 @@ setInterval(function () {
                 creamPrice = result.market_data.current_price.usd;
                 creamPrice = Math.round(((creamPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
                 creamMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
+
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/strong', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                strongPrice = result.market_data.current_price.usd;
+                strongPrice = Math.round(((strongPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                strongMarketcap = result.market_data.market_cap.usd;
             } catch (e) {
                 console.log(e);
             }
