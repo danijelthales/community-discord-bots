@@ -44,7 +44,7 @@ const clientBeehiveParticipants = new Discord.Client();
 clientBeehiveParticipants.login(process.env.BOT_TOKEN_BEEHIVE_PARTICIPANTS);
 
 
-const clientBac= new Discord.Client();
+const clientBac = new Discord.Client();
 clientBac.login(process.env.BOT_TOKEN_BAC);
 
 const clientBas = new Discord.Client();
@@ -276,7 +276,7 @@ setInterval(function () {
 }, 60 * 1000);
 
 
-var daoHolders = 130;
+var daoHolders = 138;
 
 async function getDaoHolders() {
     try {
@@ -290,7 +290,7 @@ async function getDaoHolders() {
         const page = await browser.newPage();
         await page.setViewport({width: 1000, height: 926});
         await page.goto("https://alchemy.daostack.io/dao/0xe56b4d8d42b1c9ea7dda8a6950e3699755943de7/members/", {waitUntil: 'networkidle2'});
-        await delay(15000);
+        await delay(25000);
         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
         await delay(5000);
         await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
@@ -306,8 +306,9 @@ async function getDaoHolders() {
 
             return prices
         })
-
-        daoHolders = prices.length;
+        if (prices.length > 0) {
+            daoHolders = prices.length;
+        }
         browser.close()
     } catch (e) {
         console.log("Error happened on getting data from barnbridge.");
