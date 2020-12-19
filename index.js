@@ -56,6 +56,13 @@ clientStrong.login(process.env.BOT_TOKEN_STRONG);
 let strongPrice = 17;
 let strongMarketcap = 700000;
 
+
+const clientSushi = new Discord.Client();
+clientSushi.login(process.env.BOT_TOKEN_SUSHI);
+
+let sushiPrice = 17;
+let sushiMarketcap = 700000;
+
 let creamPrice = 17;
 let creamMarketcap = 700000;
 
@@ -247,6 +254,15 @@ setInterval(function () {
         }
     });
 
+    clientSushi.guilds.cache.forEach(function (value, key) {
+        try {
+            value.members.cache.get("789837740245254145").setNickname("$" + sushiPrice);
+            value.members.cache.get("789837740245254145").user.setActivity("marketcap=$" + getNumberLabel(sushiMarketcap), {type: 'PLAYING'});
+        } catch (e) {
+            console.log(e);
+        }
+    });
+
     clientCover.guilds.cache.forEach(function (value, key) {
         try {
             value.members.cache.get("783117934565392384").setNickname("$" + coverPrice);
@@ -421,6 +437,34 @@ setInterval(function () {
                 boostedPrice = result.market_data.current_price.usd;
                 boostedPrice = Math.round(((boostedPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
                 boostedMarketcap = result.market_data.market_cap.usd;
+            } catch (e) {
+                console.log(e);
+            }
+
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: " + err.message);
+    });
+
+}, 50 * 1000 * 1);
+
+setInterval(function () {
+    https.get('https://api.coingecko.com/api/v3/coins/sushi', (resp) => {
+        let data = '';
+
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            try {
+                let result = JSON.parse(data);
+                sushiPrice = result.market_data.current_price.usd;
+                sushiPrice = Math.round(((sushiPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                sushiMarketcap = result.market_data.market_cap.usd;
             } catch (e) {
                 console.log(e);
             }
