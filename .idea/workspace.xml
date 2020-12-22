@@ -18,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="879" column="87" selection-start-line="879" selection-start-column="87" selection-end-line="879" selection-end-column="87" />
+            <state relative-caret-position="114">
+              <caret line="863" lean-forward="true" selection-start-line="863" selection-end-line="863" />
               <folding>
-                <marker date="1608679173459" expanded="true" signature="10612:10905" ph="..." />
+                <marker date="1608680806861" expanded="true" signature="10614:10907" ph="..." />
               </folding>
             </state>
           </provider>
@@ -84,10 +84,10 @@
       <find>creamPrice</find>
       <find>daoHolders</find>
       <find>strongPrice</find>
-      <find>sushiPrice</find>
       <find>sush</find>
       <find>clientSushi</find>
       <find>clientSus</find>
+      <find>sushiPrice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,12 +201,12 @@
       <workItem from="1608036535678" duration="3240000" />
       <workItem from="1608160850509" duration="307000" />
       <workItem from="1608382363494" duration="2553000" />
-      <workItem from="1608672429876" duration="4217000" />
+      <workItem from="1608672429876" duration="5117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48115000" />
+    <option name="totallyTimeSpent" value="49015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -222,7 +222,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3206934" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43445286" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -257,7 +257,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>876</line>
+          <line>878</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -335,10 +335,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="879" column="87" selection-start-line="879" selection-start-column="87" selection-end-line="879" selection-end-column="87" />
+        <state relative-caret-position="114">
+          <caret line="863" lean-forward="true" selection-start-line="863" selection-end-line="863" />
           <folding>
-            <marker date="1608679173459" expanded="true" signature="10612:10905" ph="..." />
+            <marker date="1608680806861" expanded="true" signature="10614:10907" ph="..." />
           </folding>
         </state>
       </provider>

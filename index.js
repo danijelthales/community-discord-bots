@@ -60,7 +60,7 @@ let strongMarketcap = 700000;
 const clientSushi = new Discord.Client();
 clientSushi.login(process.env.BOT_TOKEN_SUSHI);
 
-let sushiPrice = 17;
+let sushiPrice = 2.68;
 let sushiMarketcap = 700000;
 
 let creamPrice = 17;
@@ -855,9 +855,11 @@ setInterval(function () {
 
     sushiData.bar.info().then(i => {
         console.log(i);
-        stakedSushiValue = i.sushiStakedUSD;
+        xSushiSuply = i.totalSupply;
+        xSushiRatio = i.ratio;
+        stakedSushiValue = xSushiSuply * xSushiRatio * sushiPrice;
     })
-}, 40 * 1000);
+}, 50 * 1000);
 
 
 const clientXSushi = new Discord.Client();
