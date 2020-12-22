@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sushiswap/sushi-data": "0.0.9",
     "@uniswap/sdk": "^3.0.3",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
