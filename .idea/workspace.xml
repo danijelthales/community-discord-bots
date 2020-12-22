@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473e0474-bddb-4a7f-a563-c954152c690b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="862" column="61" lean-forward="true" selection-start-line="862" selection-start-column="61" selection-end-line="862" selection-end-column="61" />
+            <state relative-caret-position="202">
+              <caret line="865" column="17" selection-start-line="865" selection-start-column="17" selection-end-line="865" selection-end-column="17" />
               <folding>
-                <marker date="1608678206144" expanded="true" signature="10612:10905" ph="..." />
+                <marker date="1608679001895" expanded="true" signature="10612:10905" ph="..." />
               </folding>
             </state>
           </provider>
@@ -52,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -90,6 +87,7 @@
       <find>sushiPrice</find>
       <find>sush</find>
       <find>clientSushi</find>
+      <find>clientSus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,12 +201,12 @@
       <workItem from="1608036535678" duration="3240000" />
       <workItem from="1608160850509" duration="307000" />
       <workItem from="1608382363494" duration="2553000" />
-      <workItem from="1608672429876" duration="3250000" />
+      <workItem from="1608672429876" duration="4045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47148000" />
+    <option name="totallyTimeSpent" value="47943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -257,11 +255,22 @@
           <line>325</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>871</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>dailySushiApy*100</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>t.tokenInfo.price.rate * t.balance / 1e18</expression-string>
         <language-id>JavaScript</language-id>
@@ -320,16 +329,16 @@
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="862" column="61" lean-forward="true" selection-start-line="862" selection-start-column="61" selection-end-line="862" selection-end-column="61" />
+        <state relative-caret-position="202">
+          <caret line="865" column="17" selection-start-line="865" selection-start-column="17" selection-end-line="865" selection-end-column="17" />
           <folding>
-            <marker date="1608678206144" expanded="true" signature="10612:10905" ph="..." />
+            <marker date="1608679001895" expanded="true" signature="10612:10905" ph="..." />
           </folding>
         </state>
       </provider>
