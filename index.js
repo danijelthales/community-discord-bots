@@ -831,6 +831,11 @@ let stakedSushiValue = 0;
 let dailySushiApy = 0;
 let weeklySushyApy = 0;
 setInterval(function () {
+    sushiDailyVolume = 0;
+    sushiWeeklyVolume = 0;
+    stakedSushiValue = 0;
+    dailySushiApy = 0;
+    weeklySushyApy = 0;
     sushiData.exchange.dayData(7).then(r => {
         console.log(r);
         r.forEach(d => {
@@ -852,7 +857,7 @@ setInterval(function () {
         console.log(i);
         stakedSushiValue = i.sushiStakedUSD;
     })
-}, 10 * 1000);
+}, 40 * 1000);
 
 
 const clientXSushi = new Discord.Client();
@@ -871,11 +876,13 @@ setInterval(function () {
     //APY = (1 + Periodic Rate)Number of periods – 1
     clientXSushi.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("791077082238681109").setNickname("24h=" + getNumberLabel(sushiDailyVolume) + " 7d=" + getNumberLabel(sushiWeeklyVolume));
-            value.members.cache.get("791077082238681109").user.setActivity("xSUSHI APY 24h=" + dailySushiApy + " 7d=" + weeklySushyApy, {type: 'PLAYING'});
+            if (dailySushiApy > 0) {
+                value.members.cache.get("791077082238681109").setNickname("volume 24h=$" + getNumberLabel(sushiDailyVolume) + " 7d=$" + getNumberLabel(sushiWeeklyVolume));
+                value.members.cache.get("791077082238681109").user.setActivity("xSUSHI APY 24h=" + dailySushiApy + "% 7d=" + weeklySushyApy + '%', {type: 'PLAYING'});
+            }
         } catch (e) {
             console.log(e);
         }
     });
 
-}, 1000 * 20)
+}, 1000 * 60)

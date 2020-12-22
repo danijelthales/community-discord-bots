@@ -18,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="865" column="17" selection-start-line="865" selection-start-column="17" selection-end-line="865" selection-end-column="17" />
+            <state relative-caret-position="304">
+              <caret line="879" column="87" selection-start-line="879" selection-start-column="87" selection-end-line="879" selection-end-column="87" />
               <folding>
-                <marker date="1608679001895" expanded="true" signature="10612:10905" ph="..." />
+                <marker date="1608679173459" expanded="true" signature="10612:10905" ph="..." />
               </folding>
             </state>
           </provider>
@@ -201,12 +201,12 @@
       <workItem from="1608036535678" duration="3240000" />
       <workItem from="1608160850509" duration="307000" />
       <workItem from="1608382363494" duration="2553000" />
-      <workItem from="1608672429876" duration="4045000" />
+      <workItem from="1608672429876" duration="4217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47943000" />
+    <option name="totallyTimeSpent" value="48115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -257,7 +257,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>871</line>
+          <line>876</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -335,10 +335,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="865" column="17" selection-start-line="865" selection-start-column="17" selection-end-line="865" selection-end-column="17" />
+        <state relative-caret-position="304">
+          <caret line="879" column="87" selection-start-line="879" selection-start-column="87" selection-end-line="879" selection-end-column="87" />
           <folding>
-            <marker date="1608679001895" expanded="true" signature="10612:10905" ph="..." />
+            <marker date="1608679173459" expanded="true" signature="10612:10905" ph="..." />
           </folding>
         </state>
       </provider>
