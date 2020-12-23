@@ -258,6 +258,7 @@ setInterval(function () {
         try {
             value.members.cache.get("789837740245254145").setNickname("$" + sushiPrice);
             value.members.cache.get("789837740245254145").user.setActivity("marketcap=$" + getNumberLabel(sushiMarketcap), {type: 'PLAYING'});
+            console.log("Updating Sushi price at: " + sushiPrice)
         } catch (e) {
             console.log(e);
         }
@@ -841,20 +842,17 @@ async function doXSusi() {
     dailySushiApy = 0;
     weeklySushyApy = 0;
     await sushiData.exchange.dayData(8).then(r => {
-        console.log(r);
         for (var i = 0; i < 7; i++) {
             sushiWeeklyVolume += r[i + 1].volumeUSD;
         }
     })
 
     await sushiData.exchange.dayData(2).then(r => {
-        console.log(r);
         sushiDailyVolume = r[1].volumeUSD;
     })
 
 
     await sushiData.bar.info().then(i => {
-        console.log(i);
         xSushiSuply = i.totalSupply;
         xSushiRatio = i.ratio;
         stakedSushiValue = xSushiSuply * xSushiRatio * sushiPrice;
@@ -885,6 +883,7 @@ async function doXSusi() {
 
 }
 
-setInterval(doXSusi, 60 * 1000);
+setTimeout(doXSusi, 60 * 1000);
+setInterval(doXSusi, 240 * 1000);
 
 
