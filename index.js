@@ -833,61 +833,58 @@ let sushiWeeklyVolume = 0;
 let stakedSushiValue = 0;
 let dailySushiApy = 0;
 let weeklySushyApy = 0;
-setInterval(function () {
+
+async function doXSusi() {
     sushiDailyVolume = 0;
     sushiWeeklyVolume = 0;
     stakedSushiValue = 0;
     dailySushiApy = 0;
     weeklySushyApy = 0;
-    sushiData.exchange.dayData(7).then(r => {
+    await sushiData.exchange.dayData(8).then(r => {
         console.log(r);
-        r.forEach(d => {
-            sushiWeeklyVolume += d.volumeUSD;
-            console.log('week' + sushiWeeklyVolume);
-        })
+        for (var i = 0; i < 7; i++) {
+            sushiWeeklyVolume += r[i + 1].volumeUSD;
+        }
     })
 
-    sushiData.exchange.dayData(1).then(r => {
+    await sushiData.exchange.dayData(2).then(r => {
         console.log(r);
-        r.forEach(d => {
-            sushiDailyVolume += d.volumeUSD;
-            console.log('day' + sushiDailyVolume);
-        })
+        sushiDailyVolume = r[1].volumeUSD;
     })
 
 
-    sushiData.bar.info().then(i => {
+    await sushiData.bar.info().then(i => {
         console.log(i);
         xSushiSuply = i.totalSupply;
         xSushiRatio = i.ratio;
         stakedSushiValue = xSushiSuply * xSushiRatio * sushiPrice;
     })
 
-    setTimeout(function () {
-        let dailyFees = sushiDailyVolume * 0.05 * 0.01;
-        let weeklyFees = sushiWeeklyVolume * 0.05 * 0.01;
-        let dailySushiApyRate = dailyFees / stakedSushiValue;
-        dailySushiApy = Math.pow(1 + dailySushiApyRate, 365) - 1;
-        dailySushiApy = dailySushiApy * 100;
-        dailySushiApy = dailySushiApy.toFixed(2);
-        let weeklySushiApyRate = weeklyFees / stakedSushiValue;
-        weeklySushyApy = Math.pow(1 + weeklySushiApyRate, 52) - 1;
-        weeklySushyApy = weeklySushyApy * 100;
-        weeklySushyApy = weeklySushyApy.toFixed(2);
-        //APY = (1 + Periodic Rate)Number of periods – 1
-        clientXSushi.guilds.cache.forEach(function (value, key) {
-            try {
-                if (dailySushiApy > 0) {
-                    value.members.cache.get("791077082238681109").setNickname("volume 24h=$" + getNumberLabel(sushiDailyVolume) + " 7d=$" + getNumberLabel(sushiWeeklyVolume));
-                    value.members.cache.get("791077082238681109").user.setActivity("xSUSHI APY 24h=" + dailySushiApy + "% 7d=" + weeklySushyApy + '%', {type: 'PLAYING'});
-                }
-            } catch (e) {
-                console.log(e);
+    let dailyFees = sushiDailyVolume * 0.05 * 0.01;
+    let weeklyFees = sushiWeeklyVolume * 0.05 * 0.01;
+    let dailySushiApyRate = dailyFees / stakedSushiValue;
+    dailySushiApy = Math.pow(1 + dailySushiApyRate, 365) - 1;
+    dailySushiApy = dailySushiApy * 100;
+    dailySushiApy = dailySushiApy.toFixed(2);
+    let weeklySushiApyRate = weeklyFees / stakedSushiValue;
+    weeklySushyApy = Math.pow(1 + weeklySushiApyRate, 52) - 1;
+    weeklySushyApy = weeklySushyApy * 100;
+    weeklySushyApy = weeklySushyApy.toFixed(2);
+    //APY = (1 + Periodic Rate)Number of periods – 1
+    clientXSushi.guilds.cache.forEach(function (value, key) {
+        try {
+            if (dailySushiApy > 0) {
+                value.members.cache.get("791077082238681109").setNickname("volume 24h=$" + getNumberLabel(sushiDailyVolume) + " 7d=$" + getNumberLabel(sushiWeeklyVolume));
+                value.members.cache.get("791077082238681109").user.setActivity("xSUSHI APY 24h=" + dailySushiApy + "% 7d=" + weeklySushyApy + '%', {type: 'PLAYING'});
             }
-        });
+        } catch (e) {
+            console.log(e);
+        }
+    });
 
-    }, 1000 * 20)
 
-}, 50 * 1000);
+}
+
+setInterval(doXSusi, 60 * 1000);
 
 

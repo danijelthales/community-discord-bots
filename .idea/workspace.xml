@@ -18,10 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="825" column="51" lean-forward="true" selection-start-line="825" selection-start-column="51" selection-end-line="825" selection-end-column="51" />
+            <state relative-caret-position="361">
+              <caret line="873" column="4" selection-start-line="873" selection-start-column="4" selection-end-line="873" selection-end-column="4" />
               <folding>
-                <marker date="1608681950711" expanded="true" signature="10614:10907" ph="..." />
+                <marker date="1608683332650" expanded="true" signature="10614:10907" ph="..." />
               </folding>
             </state>
           </provider>
@@ -201,16 +201,15 @@
       <workItem from="1608036535678" duration="3240000" />
       <workItem from="1608160850509" duration="307000" />
       <workItem from="1608382363494" duration="2553000" />
-      <workItem from="1608672429876" duration="5874000" />
+      <workItem from="1608672429876" duration="7532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49772000" />
+    <option name="totallyTimeSpent" value="51430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27025586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -254,6 +253,12 @@
           <url>file://$PROJECT_DIR$/index.js</url>
           <line>325</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>873</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -329,10 +334,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="825" column="51" lean-forward="true" selection-start-line="825" selection-start-column="51" selection-end-line="825" selection-end-column="51" />
+        <state relative-caret-position="361">
+          <caret line="873" column="4" selection-start-line="873" selection-start-column="4" selection-end-line="873" selection-end-column="4" />
           <folding>
-            <marker date="1608681950711" expanded="true" signature="10614:10907" ph="..." />
+            <marker date="1608683332650" expanded="true" signature="10614:10907" ph="..." />
           </folding>
         </state>
       </provider>
