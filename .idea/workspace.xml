@@ -19,11 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="882" lean-forward="true" selection-start-line="882" selection-end-line="882" />
-              <folding>
-                <marker date="1608721687025" expanded="true" signature="10680:10973" ph="..." />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="292" selection-start-line="292" selection-end-line="292" />
             </state>
           </provider>
         </entry>
@@ -116,7 +113,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
-    <option name="width" value="1932" />
+    <option name="width" value="1931" />
     <option name="height" value="1045" />
   </component>
   <component name="ProjectView">
@@ -125,7 +122,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,13 +151,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../complex-discord-bots" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -203,18 +200,19 @@
       <workItem from="1608160850509" duration="307000" />
       <workItem from="1608382363494" duration="2553000" />
       <workItem from="1608672429876" duration="8766000" />
-      <workItem from="1608721375245" duration="312000" />
+      <workItem from="1608721375245" duration="575000" />
+      <workItem from="1609331835178" duration="648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52976000" />
+    <option name="totallyTimeSpent" value="53887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27292112" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2761194" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -224,7 +222,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2990249" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2990249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -254,19 +252,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>326</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.js</url>
-          <line>467</line>
-          <properties lambdaOrdinal="-1" />
+          <line>415</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>259</line>
-          <properties lambdaOrdinal="-1" />
+          <line>249</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -316,11 +307,8 @@
     <entry file="file://$PROJECT_DIR$/node_modules/sushi-data/index.js" />
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="882" lean-forward="true" selection-start-line="882" selection-end-line="882" />
-          <folding>
-            <marker date="1608721687025" expanded="true" signature="10680:10973" ph="..." />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="292" selection-start-line="292" selection-end-line="292" />
         </state>
       </provider>
     </entry>
