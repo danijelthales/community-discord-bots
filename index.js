@@ -280,8 +280,7 @@ setInterval(function () {
         }
     });
 
-}, 60 * 1000);
-
+}, 30 * 1000);
 
 
 function delay(time) {
@@ -424,7 +423,7 @@ setInterval(function () {
         console.log("Error: " + err.message);
     });
 
-}, 50 * 1000 * 1);
+}, 30 * 1000);
 
 setInterval(function () {
     https.get('https://api.coingecko.com/api/v3/coins/cover-protocol', (resp) => {

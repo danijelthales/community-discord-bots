@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="292" selection-start-line="292" selection-end-line="292" />
+            <state relative-caret-position="256">
+              <caret line="280" column="7" lean-forward="true" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -84,8 +84,8 @@
       <find>clientSus</find>
       <find>sushiprice</find>
       <find>doXSusi</find>
-      <find>sushiPrice</find>
       <find>console.log(</find>
+      <find>sushiPrice</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +113,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
-    <option name="width" value="1931" />
+    <option name="width" value="1932" />
     <option name="height" value="1045" />
   </component>
   <component name="ProjectView">
@@ -121,7 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,6 +150,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -158,7 +158,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../complex-discord-bots" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -202,17 +202,18 @@
       <workItem from="1608672429876" duration="8766000" />
       <workItem from="1608721375245" duration="575000" />
       <workItem from="1609331835178" duration="648000" />
+      <workItem from="1609635876726" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53887000" />
+    <option name="totallyTimeSpent" value="55696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2761194" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2889126" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -252,7 +253,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>415</line>
+          <line>414</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -307,8 +308,8 @@
     <entry file="file://$PROJECT_DIR$/node_modules/sushi-data/index.js" />
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="292" selection-start-line="292" selection-end-line="292" />
+        <state relative-caret-position="256">
+          <caret line="280" column="7" lean-forward="true" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
         </state>
       </provider>
     </entry>
