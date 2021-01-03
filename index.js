@@ -57,12 +57,6 @@ let strongPrice = 17;
 let strongMarketcap = 700000;
 
 
-const clientSushi = new Discord.Client();
-clientSushi.login(process.env.BOT_TOKEN_SUSHI);
-
-let sushiPrice = 2.68;
-let sushiMarketcap = 700000;
-
 let creamPrice = 17;
 let creamMarketcap = 700000;
 
@@ -244,16 +238,6 @@ setInterval(function () {
         }
     });
 
-    clientSushi.guilds.cache.forEach(function (value, key) {
-        try {
-            value.members.cache.get("789837740245254145").setNickname("$" + sushiPrice);
-            value.members.cache.get("789837740245254145").user.setActivity("marketcap=$" + getNumberLabel(sushiMarketcap), {type: 'PLAYING'});
-            console.log("Updating Sushi price at: " + sushiPrice)
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
     clientCover.guilds.cache.forEach(function (value, key) {
         try {
             value.members.cache.get("783117934565392384").setNickname("$" + coverPrice);
@@ -397,6 +381,7 @@ setInterval(function () {
 
 }, 50 * 1000 * 1);
 
+let sushiPrice = 3.14;
 setInterval(function () {
     https.get('https://api.coingecko.com/api/v3/coins/sushi', (resp) => {
         let data = '';
