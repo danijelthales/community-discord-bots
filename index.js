@@ -82,94 +82,9 @@ let basMarketcap = 700000;
 
 let necApy = 570;
 
-let holdersCount = 853;
-setInterval(function () {
-    try {
-        https.get('https://api.bloxy.info/token/token_stat?token=0xcc80c051057b774cd75067dc48f8987c4eb97a5e&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
-            let data = '';
-
-            // A chunk of data has been recieved.
-            resp.on('data', (chunk) => {
-                data += chunk;
-            });
-
-            // The whole response has been received. Print out the result.
-            resp.on('end', () => {
-                try {
-                    let result = JSON.parse(data);
-                    holdersCount = result[0].holders_count;
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-
-        }).on("error", (err) => {
-            console.log("Error: " + err.message);
-        });
-    } catch (e) {
-        console.log(e);
-    }
-}, 60 * 1000 * 2);
-
-let beehiveParticipants = 57;
-setInterval(function () {
-    try {
-        https.get('https://api.bloxy.info/token/token_stat?token=0xb21e53d8bd2c81629dd916eeAd08d338e7fCC201&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
-            let data = '';
-
-            // A chunk of data has been recieved.
-            resp.on('data', (chunk) => {
-                data += chunk;
-            });
-
-            // The whole response has been received. Print out the result.
-            resp.on('end', () => {
-                try {
-                    let result = JSON.parse(data);
-                    beehiveParticipants = result[0].holders_count;
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-
-        }).on("error", (err) => {
-            console.log("Error: " + err.message);
-        });
-    } catch (e) {
-        console.log(e);
-    }
-}, 60 * 1000 * 2);
 
 
 setInterval(function () {
-
-    clientTokenHolders.guilds.cache.forEach(function (value, key) {
-        try {
-            value.members.cache.get("779508126843535381").setNickname("NEC holders=" + holdersCount);
-            //value.members.cache.get("779508126843535381").user.setActivity("marketcap=$" + getNumberLabel(btcMarketCap), {type: 'PLAYING'});
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
-
-    clientBeehiveApy.guilds.cache.forEach(function (value, key) {
-        try {
-            value.members.cache.get("784089122171519006").setNickname("APY=" + necApy + "%");
-            //value.members.cache.get("784089122171519006").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
-    clientBeehiveParticipants.guilds.cache.forEach(function (value, key) {
-        try {
-            value.members.cache.get("784089307044380732").setNickname("beehive=" + beehiveParticipants);
-            //value.members.cache.get("784089307044380732").user.setActivity("locked=$" + getNumberLabel(DAObalance) + " NEC=" + getNumberLabel(DAONecBalance), {type: 'PLAYING'});
-        } catch (e) {
-            console.log(e);
-        }
-    });
 
     clientBoosted.guilds.cache.forEach(function (value, key) {
         try {
@@ -253,14 +168,6 @@ setInterval(function () {
         }
     });
 
-    clientDeversify.guilds.cache.forEach(function (value, key) {
-        try {
-            value.members.cache.get("779762860146032692").setNickname("TVL=$" + numberWithCommas(deversifyTVL));
-        } catch (e) {
-            console.log(e);
-        }
-    });
-
 }, 30 * 1000);
 
 
@@ -269,38 +176,6 @@ function delay(time) {
         setTimeout(resolve, time)
     });
 }
-
-let DAObalance = 11000000;
-let DAONecBalance = 66000000;
-setInterval(function () {
-    try {
-        https.get('https://api.bloxy.info/address/balance?address=0xDa490e9acc7f7418293CFeA1FF2085c60d573626&chain=eth&key=ACCVnTqQ9YRKK&format=structure', (resp) => {
-            let data = '';
-
-            // A chunk of data has been recieved.
-            resp.on('data', (chunk) => {
-                data += chunk;
-            });
-
-            // The whole response has been received. Print out the result.
-            resp.on('end', () => {
-                try {
-                    let result = JSON.parse(data);
-                    DAONecBalance = result[0].balance;
-                    DAObalance = DAONecBalance * necPrice;
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-
-        }).on("error", (err) => {
-            console.log("Error: " + err.message);
-        });
-    } catch (e) {
-        console.log(e);
-    }
-}, 60 * 1000 * 1);
-
 
 function getNumberLabel(labelValue) {
 
@@ -724,7 +599,7 @@ setInterval(function () {
             });
         });
     }catch (e) {
-        
+
     }
 
 }, 5 * 1000);
