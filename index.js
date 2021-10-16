@@ -2,7 +2,6 @@ require("dotenv").config()
 const Discord = require("discord.js")
 
 
-const replaceString = require('replace-string');
 const https = require('follow-redirects').https;
 const redis = require("redis");
 let redisClient = null;
@@ -82,8 +81,6 @@ let basPrice = 17;
 let basMarketcap = 700000;
 
 let necApy = 570;
-
-const puppeteer = require('puppeteer');
 
 let holdersCount = 853;
 setInterval(function () {
