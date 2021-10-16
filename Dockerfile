@@ -4,7 +4,7 @@ FROM node:12
 WORKDIR /usr/src/app
 
 # Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# A wildcard is used to ensure both package-orig.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
 
@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 3001
 
-CMD [ "node", "price.js" ]
+CMD [ "node", "generic-supply.js" ]

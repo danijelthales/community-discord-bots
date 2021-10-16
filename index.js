@@ -691,7 +691,7 @@ clientgasPrice.login(process.env.BOT_TOKEN_GAS);
 setInterval(function () {
     clientgasPrice.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("745936096336019578").setNickname(gasPrice + " gwei");
+            value.members.cache.get("745936096336019578").setNickname("Gas Price");
             value.members.cache.get("745936096336019578").user.setActivity("fast=" + fastGasPrice + " slow=" + lowGasPrice, {type: 'PLAYING'});
         } catch (e) {
             console.log(e);
@@ -704,7 +704,7 @@ let fastGasPrice = 20;
 let lowGasPrice = 20;
 let instantGasPrice = 20;
 setInterval(function () {
-    https.get('https://www.gasnow.org/api/v3/gas/price', (resp) => {
+    https.get('https://api.etherscan.io/api?module=gastracker&action=gasoracle', (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
@@ -715,15 +715,11 @@ setInterval(function () {
         // The whole response has been received. Print out the result.
         resp.on('end', () => {
             try {
-                let result = JSON.parse(data);
-                gasPrice = result.data.standard / 1000000000;
-                fastGasPrice = result.data.fast / 1000000000;
-                lowGasPrice = result.data.slow / 1000000000;
-                instantGasPrice = result.data.rapid / 1000000000;
-                gasPrice = Math.round(((gasPrice * 1.0) + Number.EPSILON) * 10) / 10;
-                fastGasPrice = Math.round(((fastGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
-                lowGasPrice = Math.round(((lowGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
-                instantGasPrice = Math.round(((instantGasPrice * 1.0) + Number.EPSILON) * 10) / 10;
+                let result = JSON.parse(data.result);
+                gasPrice = result.ProposeGasPrice
+                lowGasPrice = result.SafeGasPrice
+                fastGasPrice = result.FastGasPrice
+                instantGasPrice = result.FastGasPrice
             } catch (e) {
                 console.log(e);
             }

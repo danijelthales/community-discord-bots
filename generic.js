@@ -7,20 +7,22 @@ const https = require('follow-redirects').https;
 
 var fs = require('fs');
 
-const clientSushi = new Discord.Client();
-clientSushi.login(process.env.BOT_TOKEN_SUSHI);
+const client = new Discord.Client();
+client.login(process.env.BOT_TOKEN);
+let clientId = process.env.CLIENT_ID;
+let coingeckoId = process.env.COINGECKO_ID;
 
-let sushiPrice = 2.68;
-let sushiMarketcap = 700000;
+let tokenPrice = 2.68;
+let tokenMarketcap = 700000;
 
 
 setInterval(function () {
 
-    clientSushi.guilds.cache.forEach(function (value, key) {
+    client.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("789837740245254145").setNickname("$" + sushiPrice);
-            value.members.cache.get("789837740245254145").user.setActivity("marketcap=$" + getNumberLabel(sushiMarketcap), {type: 'PLAYING'});
-            console.log("Updating Sushi price at: " + sushiPrice)
+            value.members.cache.get(clientId).setNickname("$" + tokenPrice);
+            value.members.cache.get(clientId).user.setActivity("marketcap=$" + getNumberLabel(tokenMarketcap), {type: 'PLAYING'});
+            console.log("Updating price at: " + tokenPrice)
         } catch (e) {
             console.log(e);
         }
@@ -56,7 +58,7 @@ function getNumberLabel(labelValue) {
 }
 
 setInterval(function () {
-    https.get('https://api.coingecko.com/api/v3/coins/sushi', (resp) => {
+    https.get('https://api.coingecko.com/api/v3/coins/' + coingeckoId, (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
@@ -68,9 +70,9 @@ setInterval(function () {
         resp.on('end', () => {
             try {
                 let result = JSON.parse(data);
-                sushiPrice = result.market_data.current_price.usd;
-                sushiPrice = Math.round(((sushiPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
-                sushiMarketcap = result.market_data.market_cap.usd;
+                tokenPrice = result.market_data.current_price.usd;
+                tokenPrice = Math.round(((tokenPrice * 1.0) + Number.EPSILON) * 1000) / 1000;
+                tokenMarketcap = result.market_data.market_cap.usd;
             } catch (e) {
                 console.log(e);
             }

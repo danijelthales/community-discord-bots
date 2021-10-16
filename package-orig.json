@@ -11,10 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sushiswap/sushi-data": "0.0.9",
+    "@uniswap/sdk": "^3.0.3",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "ethers": "^5.0.17",
     "follow-redirects": "^1.13.0",
-    "redis": "^3.0.2"
+    "puppeteer": "^5.2.1",
+    "redis": "^3.0.2",
+    "replace-string": "^3.1.0",
+    "synthetix-data": "^2.1.33"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
