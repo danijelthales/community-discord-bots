@@ -694,36 +694,40 @@ setInterval(function () {
             console.log(e);
         }
     })
-}, 60 * 1000);
+}, 10 * 1000);
 
 let gasPrice = 20;
 let fastGasPrice = 20;
 let lowGasPrice = 20;
 let instantGasPrice = 20;
 setInterval(function () {
-    https.get('https://api.etherscan.io/api?module=gastracker&action=gasoracle', (resp) => {
-        let data = '';
+    try {
+        https.get('https://api.etherscan.io/api?module=gastracker&action=gasoracle', (resp) => {
+            let data = '';
 
-        // A chunk of data has been recieved.
-        resp.on('data', (chunk) => {
-            data += chunk;
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                try {
+                    let result = JSON.parse(data);
+                    gasPrice = result.result.ProposeGasPrice
+                    lowGasPrice = result.result.SafeGasPrice
+                    fastGasPrice = result.result.FastGasPrice
+                    instantGasPrice = result.result.FastGasPrice
+                } catch (e) {
+                    console.log(e);
+                }
+            });
         });
+    }catch (e) {
+        
+    }
 
-        // The whole response has been received. Print out the result.
-        resp.on('end', () => {
-            try {
-                let result = JSON.parse(data.result);
-                gasPrice = result.ProposeGasPrice
-                lowGasPrice = result.SafeGasPrice
-                fastGasPrice = result.FastGasPrice
-                instantGasPrice = result.FastGasPrice
-            } catch (e) {
-                console.log(e);
-            }
-        });
-    });
-
-}, 30 * 1000);
+}, 5 * 1000);
 
 setInterval(function () {
     https.get('https://api.deversifi.com/nectarPoolStats', (resp) => {
