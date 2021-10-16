@@ -510,48 +510,6 @@ setInterval(function () {
 }, 60 * 1000 * 1);
 
 
-let deversifyTVL = 3000000;
-setInterval(function () {
-    try {
-        https.get('https://api.ethplorer.io/getAddressInfo/0x5d22045DAcEAB03B158031eCB7D9d06Fad24609b?apiKey=freekey', (resp) => {
-            let data = '';
-
-            // A chunk of data has been recieved.
-            resp.on('data', (chunk) => {
-                data += chunk;
-            });
-
-            // The whole response has been received. Print out the result.
-            resp.on('end', () => {
-                try {
-                    let result = JSON.parse(data);
-
-                    let ethBalance = result.ETH.balance * result.ETH.price.rate;
-
-                    let otherTokens = 0;
-                    result.tokens.forEach(t => {
-                        if (t.tokenInfo.price) {
-                            let curValue = t.tokenInfo.price.rate * t.balance / Math.pow(10, t.tokenInfo.decimals);
-                            otherTokens += curValue;
-                        }
-                    });
-
-                    deversifyTVL = ethBalance + otherTokens;
-                    deversifyTVL = Math.round(((deversifyTVL * 1.0) + Number.EPSILON) * 10) / 10;
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-
-        }).on("error", (err) => {
-            console.log("Error: " + err.message);
-        });
-    } catch (e) {
-        console.log(e);
-    }
-}, 60 * 1000 * 2);
-
-
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
