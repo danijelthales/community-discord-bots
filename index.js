@@ -521,8 +521,10 @@ clientgasPrice.login(process.env.BOT_TOKEN_GAS);
 setInterval(function () {
     clientgasPrice.guilds.cache.forEach(function (value, key) {
         try {
-            value.members.cache.get("745936096336019578").setNickname("Gas Price");
-            value.members.cache.get("745936096336019578").user.setActivity("fast=" + fastGasPrice + " slow=" + lowGasPrice, {type: 'PLAYING'});
+            if(fastGasPrice) {
+                value.members.cache.get("745936096336019578").setNickname("Gas Price");
+                value.members.cache.get("745936096336019578").user.setActivity("fast=" + fastGasPrice + " slow=" + lowGasPrice, {type: 'PLAYING'});
+            }
         } catch (e) {
             console.log(e);
         }
